@@ -1,4 +1,5 @@
 import mpg_data from "./data/mpg_data.js";
+import car_data from './data/mpg_data.js';
 
 /*
 mpg_data is imported for you but that is for testing purposes only. All of the functions should use
@@ -20,6 +21,7 @@ queries.
 export function searchHighPower(car_data, minHorsepower, minTorque) {
     let res = car_data.filter(car => car["horsepower"] >= minHorsepower && car["torque"] >= minTorque);
     res.sort(function(a, b){return b["horsepower"]-a["horsepower"]});
+    return res;
 }
 
 
@@ -34,7 +36,9 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
  *
  */
 export function searchMpg(car_data, minCity, minHighway) {
-
+    let res = car_data.filter(car => car["highway_mpg"] >= minHighway && car["city_mpg"] >= minCity);
+    res.sort(function(a, b){return b["highway_mpg"]-a["highway_mpg"]});
+    return res;
 }
 
 
@@ -47,7 +51,9 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-
+    let res = car_data.filter(car => car["id"].includes(searchTerm));
+    res.sort(function(a, b){return a["id"].indexOf(searchTerm)-b["id"].indexOf(searchTerm)});
+    return res;
 }
 
 
@@ -60,5 +66,12 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
-
+    let res = car_data.filter(car => years.includes(car["year"]));
+    res.sort(function(a, b){return b["year"]-a["year"]});
+    return res;
 }
+
+// console.log(searchHighPower(car_data, 630, 730));
+// console.log(searchMpg(car_data, 35, 40));
+// console.log(searchName(car_data, 'Kia Soul AT'));
+console.log(searchByYear(car_data, [ 2016, 2018 ]));
