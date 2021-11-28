@@ -69,4 +69,4 @@ export function countArray(array) {
     return o;
 }
 
-console.log(maxAndMin('41847923'));
+// console.log(maxAndMin('41847923'));
