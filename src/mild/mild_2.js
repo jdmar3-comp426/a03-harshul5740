@@ -68,7 +68,9 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-
+   let newObject = JSON.parse(JSON.stringify(object));
+   removeKey(newObject,key);
+   return newObject;
 }
 
 /**
@@ -93,7 +95,11 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-
+   let newObject = JSON.parse(JSON.stringify(object));
+    for (let i = 0; i < keyList.length; i++) {
+      removeKey(newObject, keyList[i]);
+    }
+    return newObject;
 }
 
 // console.log(identifyArray(['some', 3, [3, 4], false]));
@@ -104,3 +110,4 @@ export function removeKeys(object, keyList) {
 //    password: 'pass123'
 // };
 // console.log(removeKey(obj, 'password'));
+// let idrecord = { name: 'John Martin', title: 'Instructor', age: 41, password: 'supersecretpassword' }; let newrecord = removeKeys(idrecord, [ 'age', 'password' ]); console.log(idrecord); console.log(newrecord);
