@@ -106,7 +106,47 @@ allCarStats.allYearStats = getStatistics(arr);
  * }
  */
 export const moreStats = {
+
     makerHybrids: undefined,
     avgMpgByYearAndHybrid: undefined
 };
+
+let minYear = allCarStats.allYearStats.min;
+let maxYear = allCarStats.allYearStats.max;
+let lis = {};
+for (let i = minYear; i <= maxYear; i++) {
+    let hybridCity = 0;
+    let hybridHighway = 0;
+    let petrolCity = 0;
+    let petrolHighway = 0;
+    let count1 = 0;
+    let count2 = 0;
+
+    for (const index in mpg_data) {
+        if (mpg_data[index]["year"] == i) {
+            if (mpg_data[index]["hybrid"] == true) {
+                hybridCity += mpg_data[index]["city_mpg"];
+                hybridHighway += mpg_data[index]["highway_mpg"];
+                count1 += 1;
+            } else {
+                petrolCity += mpg_data[index]["city_mpg"];
+                petrolHighway += mpg_data[index]["highway_mpg"];
+                count2 += 1;
+            }
+        }
+    }
+    hybridCity = hybridCity / count1;
+    hybridHighway = hybridHighway / count1;
+    petrolCity = petrolCity / count2;
+    petrolHighway = petrolHighway / count2;
+    lis[i] = {"hybrid": {"city": hybridCity, "highway": hybridHighway}, "notHybrid": {"city": petrolCity, "highway": petrolHighway}}
+    hybridCity = 0;
+    hybridHighway = 0;
+    petrolCity = 0;
+    petrolHighway = 0;
+    count1 = 0;
+    count2 = 0;
+}
+moreStats.avgMpgByYearAndHybrid = lis;
+
 
