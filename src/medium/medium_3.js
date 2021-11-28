@@ -70,8 +70,3 @@ export function searchByYear(car_data, years) {
     res.sort(function(a, b){return b["year"]-a["year"]});
     return res;
 }
-
-// console.log(searchHighPower(car_data, 630, 730));
-// console.log(searchMpg(car_data, 35, 40));
-// console.log(searchName(car_data, 'Kia Soul AT'));
-console.log(searchByYear(car_data, [ 2016, 2018 ]));

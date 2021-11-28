@@ -96,11 +96,11 @@ export function removeKeys(object, keyList) {
 
 }
 
-console.log(identifyArray(['some', 3, [3, 4], false]));
-let obj = {
-   name: 'Mr. Boss',
-   title: 'boss',
-   age: 33,
-   password: 'pass123'
-};
-console.log(removeKey(obj, 'password'));
+// console.log(identifyArray(['some', 3, [3, 4], false]));
+// let obj = {
+//    name: 'Mr. Boss',
+//    title: 'boss',
+//    age: 33,
+//    password: 'pass123'
+// };
+// console.log(removeKey(obj, 'password'));

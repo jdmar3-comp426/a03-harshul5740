@@ -110,6 +110,3 @@ export const moreStats = {
     avgMpgByYearAndHybrid: undefined
 };
 
-
-
-console.log(arr);

@@ -59,7 +59,3 @@ export function maxAndMin(numbers) {
 export function countArray(array) {
 
 }
-
-console.log(sumToString(3,4));
-console.log(maxAndMin([0,2,3,10,5,11]));
-
