@@ -17,7 +17,7 @@
 export const repeat = (fn, n, ...params) => {
     let arr = [];
     for (let i = 0; i < n; i++) {
-        arr.push(fn(params));
+        arr.push(fn(...params));
     }
     return arr;
 };
@@ -201,3 +201,6 @@ export const hasExactly = (arr, test, n) => {
         return false;
     }
 };
+
+// repeat(console.log, 5, 'What up?');
+// repeatDemo();
