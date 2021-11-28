@@ -71,6 +71,6 @@ export function getStatistics(array) {
 
 // let array = [3,2,5,6,2,7,4,2,7,5];
 // console.log(getStatistics([3,2,4,5,5,5,2,6,7]));
-console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]));
-console.log(getStatistics([14,8,5,7,7,5,2,7,5,3,47,9]));
+// console.log(getMedian([14,8,5,7,7,5,2,7,5,3,47,9]));
+// console.log(getStatistics([14,8,5,7,7,5,2,7,5,3,47,9]));
 
